@@ -1,2 +1,2 @@
 #!/bin/bash
-read | tr 'ze' 'Ac'
+tr 'Ac' 'ze'
