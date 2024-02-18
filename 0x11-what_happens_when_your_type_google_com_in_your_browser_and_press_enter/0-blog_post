@@ -1,0 +1,60 @@
+What happens when you type https://www.google.com in your browser and press Enter?
+
+Have you ever wondered what goes on behind the scenes when you visit a website like Google? In this blog post, we will explore the steps involved in loading a web page, from typing the URL in the browser to seeing the results on the screen. We will cover the following concepts:
+
+DNS request
+TCP/IP
+Firewall
+HTTPS/SSL
+Load-balancer
+Web server
+Application server
+Database
+DNS request
+The first thing that happens when you type https://www.google.com in your browser is a DNS request. DNS stands for Domain Name System, and it is a service that translates human-readable domain names (like www.google.com) into machine-readable IP addresses (like 142.250.74.196).
+
+The browser does not know the IP address of the website you want to visit, so it asks a DNS server for it. A DNS server is a computer that stores a database of domain names and their corresponding IP addresses. There are many DNS servers around the world, and your browser usually contacts the one that is closest to you or provided by your internet service provider (ISP).
+
+The DNS server looks up the domain name you requested and returns the IP address to the browser. If the DNS server does not have the record for the domain name, it may forward the request to another DNS server until it finds the answer or returns an error.
+
+TCP/IP
+The next thing that happens is a TCP/IP connection. TCP/IP stands for Transmission Control Protocol/Internet Protocol, and it is a set of rules that governs how data is transmitted over the internet. TCP/IP consists of four layers: application, transport, internet, and network.
+
+The application layer is where the browser and the web server communicate using a specific protocol, such as HTTP or HTTPS. HTTP stands for Hypertext Transfer Protocol, and it is a standard for exchanging text, images, and other media on the web. HTTPS stands for Hypertext Transfer Protocol Secure, and it is a version of HTTP that encrypts the data to ensure its security and privacy.
+
+The transport layer is where the data is divided into smaller units called packets, and each packet is assigned a sequence number and a checksum. The sequence number helps to reassemble the packets in the correct order at the destination, and the checksum helps to detect any errors or corruption in the data. The transport layer also uses a protocol called TCP (Transmission Control Protocol) to establish a reliable connection between the browser and the web server, and to handle the flow control and congestion control of the data.
+
+The internet layer is where the packets are assigned a source and a destination IP address, and are routed through the network of routers and switches that make up the internet. The internet layer uses a protocol called IP (Internet Protocol) to determine the best path for each packet to reach its destination, and to handle the fragmentation and reassembly of the packets if they are too large for the network.
+
+The network layer is where the packets are converted into electrical signals or radio waves, and are transmitted over the physical medium, such as a cable, a fiber optic, or a wireless network. The network layer uses various protocols and technologies, such as Ethernet, Wi-Fi, or 4G, to connect the devices on the network and to encode and decode the data.
+
+Firewall
+Before the packets reach the web server, they may encounter a firewall. A firewall is a device or a software that monitors and filters the incoming and outgoing network traffic, based on a set of rules and policies. The purpose of a firewall is to protect the network from unauthorized or malicious access, and to block any unwanted or harmful data.
+
+A firewall can be located at different points of the network, such as the edge of the network, the gateway of the network, or the host of the network. A firewall can also operate at different layers of the TCP/IP model, such as the network layer, the transport layer, or the application layer.
+
+A firewall can perform various functions, such as packet filtering, stateful inspection, proxy service, or deep packet inspection. Packet filtering is the simplest and fastest method, where the firewall checks the header of each packet and allows or denies it based on the source and destination IP address, port number, or protocol. Stateful inspection is a more advanced method, where the firewall keeps track of the state and context of each connection and allows or denies the packets based on the previous and current status of the connection. Proxy service is a method where the firewall acts as an intermediary between the browser and the web server, and modifies or filters the data before forwarding it. Deep packet inspection is a method where the firewall analyzes the content and payload of each packet and allows or denies it based on the application or service it belongs to, such as email, web, or social media.
+
+HTTPS/SSL
+If the website you are visiting uses HTTPS, then the data between the browser and the web server is encrypted using a protocol called SSL (Secure Sockets Layer) or TLS (Transport Layer Security). SSL/TLS is a protocol that provides security, privacy, and authentication for the data transmission over the internet.
+
+SSL/TLS works by using a combination of symmetric encryption, asymmetric encryption, and digital signatures. Symmetric encryption is a method where the same key is used to encrypt and decrypt the data, and it is fast and efficient. Asymmetric encryption is a method where two different keys are used to encrypt and decrypt the data, and it is slow and secure. Digital signatures are a method where a message is hashed and encrypted with a private key, and it is used to verify the identity and integrity of the sender.
+
+The SSL/TLS process involves the following steps:
+
+The browser initiates a handshake with the web server, and sends a list of supported cipher suites (encryption algorithms) and a random number.
+The web server selects a cipher suite and sends its certificate and a random number to the browser. A certificate is a digital document that contains the public key and the identity of the web server, and it is issued and signed by a trusted third party called a certificate authority (CA).
+The browser verifies the certificate by checking the signature, the expiration date, and the domain name of the web server, and if it is valid, it extracts the public key from the certificate.
+The browser generates a pre-master secret, which is another random number, and encrypts it with the public key of the web server, and sends it to the web server.
+The web server decrypts the pre-master secret with its private key, and both the browser and the web server derive the same master secret from the pre-master secret and the two random numbers they exchanged earlier.
+The browser and the web server use the master secret to generate the same session keys, which are symmetric keys that are used to encrypt and decrypt the data for the duration of the session.
+The browser and the web server exchange a finished message, which is a hash of the previous messages, encrypted with the session keys, and confirm that the handshake is complete and the secure connection is established.
+Load-balancer
+After the packets pass through the firewall and the SSL/TLS encryption, they may reach a load-balancer. A load-balancer is a device or a software that distributes the incoming network traffic across multiple servers, based on various criteria, such as the load, the capacity, the availability, or the performance of the servers. The purpose of a load-balancer is to improve the scalability, reliability, and efficiency of the web service, and to prevent any single server from being overloaded or failing.
+
+A load-balancer can operate at different layers of the TCP/IP model, such as the network layer, the transport layer, or the application layer. A load-balancer can also use different algorithms or methods to balance the load, such as round-robin, least connections, least response time, hashing, or sticky sessions. Round-robin is a method where the load-balancer assigns each request to the next server in a circular order, and it is simple and fair. Least connections is a method where the load-balancer assigns each request to the server with the fewest active connections, and it is suitable for long-running connections. Least response time is a method where the load-balancer assigns each request to the server with the lowest response time, and it is suitable for short-running connections. Hashing is a method where the load-balancer assigns each request to a server based on a hash function of some attribute of the request, such as the IP address, the URL, or the cookie, and it is suitable for consistent routing. Sticky sessions is a method where the load-balancer assigns each request from the same client to the same server, and it is suitable for maintaining the state and the context of the session.
+
+Web server
+The next component that the packets encounter is the web server. A web server is a software that listens for and responds to HTTP or HTTPS requests from the browser, and delivers the web content, such as HTML, CSS, JavaScript, images, or other media, to the browser. A web server can also perform other functions, such as logging, caching, compression, or authentication.
+
+There are many web servers available, such as Apache, Nginx, IIS, or Tomcat, and each web server has its own features, advantages, and disadvantages. Apache is the most popular and widely used web server, and it is known for its flexibility, modularity, and compatibility. Nginx is a fast
