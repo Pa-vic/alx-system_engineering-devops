@@ -1,4 +1,7 @@
-Issue Summary:
+![post-mortem Image](https://github.com/Pa-vic/alx-system_engineering-devops/assets/112365115/89b76c88-3d34-48a0-9dcc-542337020140)
+
+
+**Issue Summary:**
 
 Duration: The outage occurred from 10:00 AM to 11:30 AM on February 14th, 2024 (UTC timezone).
 
@@ -6,7 +9,7 @@ Impact: The outage affected the authentication service, resulting in users being
 
 Root Cause: The root cause of the issue was identified as a misconfiguration in the authentication service's database connection settings, leading to database connection failures.
 
-Timeline:
+**Timeline:**
 
 10:00 AM: The issue was first detected when a spike in error rates was observed in the authentication service logs.
 
@@ -24,15 +27,15 @@ Timeline:
 
 11:30 AM: The misconfiguration was corrected, restoring normal database connectivity and resolving the authentication service outage.
 
-Root Cause and Resolution:
+**Root Cause and Resolution:**
 
 Root Cause: The issue stemmed from an incorrect configuration in the authentication service's database connection settings, causing the service to fail in establishing connections to the database.
 
 Resolution: The misconfiguration was rectified by updating the authentication service's database connection settings with the correct credentials and connection parameters.
 
-Corrective and Preventative Measures:
+**Corrective and Preventative Measures:**
 
-Improvements/Fixes:
+**Improvements/Fixes:**
 Implement regular audits of database connection settings to ensure accuracy and prevent similar misconfigurations.
 Enhance monitoring and alerting mechanisms to provide early detection of database connectivity issues.
 Tasks to Address the Issue:
