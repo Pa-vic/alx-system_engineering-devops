@@ -1,5 +1,8 @@
 ## **Postmortem: The Great Tic Tac Toe Outage of Codeville**
 ---
+
+![The Great Tic Tac Toe Outage of Codeville](https://github.com/Pa-vic/alx-system_engineering-devops/assets/112365115/749bb30b-b018-40aa-a204-4aa9f45ab71c)
+
 ## *Issue Summary*
 ---
 Duration: From April 10, 2024, 10:00 AM (UTC) to April 11, 2024, 2:30 AM (UTC).
